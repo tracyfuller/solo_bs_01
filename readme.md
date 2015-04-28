@@ -2,6 +2,7 @@
 Challenge points:
 - Front End Styling
 - Bootstrap Grid System
+- Bootstrap Screen Size Adjustments and Styling
 - Working with data using a third party API
 - Population of Content through jQuery and Bootstrap
 
