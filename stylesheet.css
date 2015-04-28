@@ -1,0 +1,37 @@
+body {
+	background-color: #677E52;
+	color: #F6E8B1;
+}
+
+img {
+	max-width: 100%;
+	max-height: 295px;
+}
+button {
+	position: absolute;
+	bottom: 5px;
+}
+#gameResult {
+	color: #75624E;
+}
+#gameResult button {
+	vertical-align: bottom;
+}
+
+.well {
+	background-color: #B0CC99;
+	border-color: #75624E;
+	padding: 5px;
+	height: 550px;
+}
+
+.inner {
+	background-color: #F6E8B1;
+	color: #677E52;
+	width: 98%;
+	height: 190px;
+	position: absolute;
+	bottom: -15px;
+}
+
+
