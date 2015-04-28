@@ -1,23 +1,20 @@
-# Peer Challenge - jQuery - 3 
+# Solo Challenge - Bootstrap - 1 
 Challenge points:
 - Front End Styling
 - Bootstrap Grid System
 - Working with data using a third party API
-- Population of Content through jQuery
-- Assigning `.on('click', function)` using jQuery
-- jQuery functions
+- Population of Content through jQuery and Bootstrap
 
-Welcome back!
--------------
+For this challenge, you will once again be working with the Giantbomb API. Your goal is to populate Bootstrap content based on the return of the API call. For this challenge, do not start with a search bar, go ahead and start with the search occuring in your Javascript.
 
-You and your peer will be tackling a bit of jQuery and Front End using Bootstrap.
+Once the call is successful, the code provided will already have the success callback in place to hook into (this is the exact same code you started with yesterday). In that success callback, start the content population process.
 
-You are going to create an application that allows users to search for video games, and display the result's image and title inside of a `div` (one `div` per result). The display of results using Bootstrap allows you to create a grid system quickly. 
+You will need to populate Bootstrap content using jQuery and Javascript. Specifically, we are looking for you to populate an image, the title of the return, and the 'deck' of the returned objects. 
 
-In addition to this functionality, clicking a result's `div` should expand the `div` it is inside of to show all useful information (at minimum include the description, release date & platform), using jQuery's `on` function.
+List out only 9 returned titles. Each title should be in a well that has an overridden color in your own stylesheet. The image should only display on LG and MD displays and should hide for SM and XS displays. The title should be in a p tag and have a lead class. Finally, include a button that has the bootstrap styling to make it small with the success styling. This button should remove the entire game title from the page (the content need not update in the html page to adjust rows)
 
-Rather than manually creating a database with video game data, this project uses [Giantbomb's API](http://www.giantbomb.com/api/). Since you're unfamiliar with the API and Ajax in general, we have already created the JavaScript functions for searching and you just have to create the front-end and manipulate the data. To use the functions you have to [sign up](https://auth.giantbomb.com/signup/) at Giantbomb, then under "Grab an API key" click "Get one!" Take that API key and paste it into your JavaScript file so that `var apikey = 'YOUR-API-KEY'`.
+##Hard Mode
+Include a jQuery fadeOut for the title being removed. Additionally, have the content appear with a jQuery fadeIn.
 
-##HARD MODE
-
-In addition to the ability to search, the user should be able to sort and/or filter results based on platform, release date and name.
+##Pro Mode
+Update the rows based off removed titles (This will be tricky)
