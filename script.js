@@ -1,8 +1,6 @@
-var apikey = 'c4c609bf889a7da2a21401f8ea6df37105c21d0e'; // Put your API key here
+var apikey = 'c4c609bf889a7da2a21401f8ea6df37105c21d0e'; 
+var textInput;
 
-var count;
-// Use this function to do stuff with your results. 
-// It is called after 'search' is executed.
 function searchCallback(results) {
     console.log("results: ", results);
     for (var i = 0; i < 9 ; i++){
@@ -18,38 +16,37 @@ function searchCallback(results) {
 		};
 		var newResult = "<div id='gameResult' class='col-xs-12 col-sm-6 col-md-4 col-lg-4 well'>" + 
 	 	"<p class='lead'>" + results[i].name + "</p><img class='hidden-sm hidden-xs' src='" + thumbnail + "'/>" +
-	 	"<div class='well inner'><p class='text-center'>" + blurb + "</p>" + button + "</div></div>";
+	 	"<div class='inner'><p class='text-center smallBlurb'>" + blurb + "</p>" + button + "</div></div>";
 	 	if (i % 3 == 0){
 	 		$("#resultsBox").append("<div class='row'></div>");
 	 	}
-	 	$(".row").last().append(newResult);
+	 	$(".row").last().append(newResult).hide().slideDown(i * 250);
 	};
 
-}
+};
 
 $(document).ready(function() {
 
 	// Start the search here!
-	search("Batman");
+	
+	$(".searchBtn").on("click", function(event){
+		$("#resultsBox").empty();
+		event.preventDefault();
+		textInput = $("#searchField").val();
+		search(textInput);
+	});
+	$("#searchField").keypress(function(e){
+        if(e.which == 13){
+            $('.searchBtn').click();
+        };
+    });
 
 	$("#resultsBox").on("click", "button", function(){
-		$(this).parent().fadeOut("fast");
+		$(this).parent().parent().fadeOut("fast");
 		console.log("I'm working");
 	});
-
-	
-	//TODO: create button functionality
- 	//TODO: create a null option
- 	
- 	//TODO: button should jquery a 'hide' class to the gameResult div
- 	//TODO: Each gameResult div should have a unique ID OR only remove the parent div
-
-	
-	
 });
 
-// HELPER FUNCTION
-// Executes a search using 'query' and runs searchCallback on the results of a success.
 function search(query){
 
 	$.ajax ({
@@ -66,4 +63,4 @@ function search(query){
 	    }
 	});
 
-}
+};
